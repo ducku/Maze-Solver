@@ -83,7 +83,7 @@ public class Maze{
     					toVisit.remove();
     					
     					//get all adjacent points
-    					MyPoint[] adj = getAdjPoints(currPoint);
+    					MyPoint[] adj = currPoint.getAdjPoints();
     					//calculate their heuristic value and add them to agenda (if within boundaries)
     					for(MyPoint p : adj) {
     						if(withinBoundaries(p)) {
@@ -99,15 +99,6 @@ public class Maze{
     		//Checked every reachable location and could not find an end
     		return false;
     		
-    }
-    
-    public MyPoint[] getAdjPoints(MyPoint curr) {
-    		MyPoint[] adj = new MyPoint[4];
-    		adj[0] = new MyPoint(curr.x + 1, curr.y);
-    		adj[1] = new MyPoint(curr.x - 1, curr.y);
-    		adj[2] = new MyPoint(curr.x, curr.y + 1);
-    		adj[3] = new MyPoint(curr.x, curr.y - 1);
-    		return adj;
     }
     
     public boolean withinBoundaries(MyPoint p) {

@@ -22,4 +22,13 @@ public class MyPoint extends Point implements Comparable<Object>{
 		heuristicValue = x;
 	}
 
+	public MyPoint[] getAdjPoints(){
+		    MyPoint[] adj = new MyPoint[4];
+    		adj[0] = new MyPoint(x + 1, y);
+    		adj[1] = new MyPoint(x - 1, y);
+    		adj[2] = new MyPoint(x, y + 1);
+    		adj[3] = new MyPoint(x, y - 1);
+    		return adj;
+	}
+
 }
